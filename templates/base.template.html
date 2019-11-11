@@ -13,7 +13,7 @@
   <body>
     <div class = "container">
       <nav class="navbar ml-auto navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/all">
+        <a class="navbar-brand" href="/">
           <img src="" width="70" height="70" class= "logo" alt=""/>WearDiy
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
               <a class="nav-link" href="{% url "login" %}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Register</a>
+              <a class="nav-link" href="{% url "register" %}">Register</a>
             </li>
             {%endif%}
             {%if user.is_authenticated %}
