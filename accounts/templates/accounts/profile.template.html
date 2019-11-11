@@ -1,0 +1,15 @@
+{% extends 'base.template.html' %}
+
+{% load crispy_forms_tags %}
+
+{%block content%}
+<h1>{{ user.first_name }}'s Profile</h1>
+<p>First Name : {{ user.first_name }}</p>
+<p>Last Name: {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Address: {{ user.address }}, Singapore {{ user.postal_code }}</p>
+<p>Telephone: {{ user.telephone }}</p>
+<p>Username: {{ user }}</p>
+<p>Password: *****</p>
+<input type='button' value='Edit Profile'/> <input type='button' value='Change Password'/>
+{%endblock%}

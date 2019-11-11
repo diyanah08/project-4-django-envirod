@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
+from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -20,7 +22,7 @@ def login(request):
                                      password=request.POST['password'])
             if user:
                 auth.login(user=user, request=request)
-                return redirect(reverse('home'))
+                return redirect(reverse('profile'))
     else:
         form = UserLoginForm()
         return render(request, 'accounts/login.template.html', {
@@ -49,3 +51,11 @@ def register(request):
         return render(request, "accounts/register.template.html", {
             'form': register_form
         })
+
+@login_required    
+def profile(request):
+    User = get_user_model()
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'accounts/profile.template.html', {
+        'user' : user
+    })
