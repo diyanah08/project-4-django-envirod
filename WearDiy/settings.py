@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'accounts',
     'shop',
-    'cart'
+    'cart',
+    'payment'
 ]
 
 MIDDLEWARE = [
@@ -151,3 +152,6 @@ FROM_EMAIL = "postmaster@sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
