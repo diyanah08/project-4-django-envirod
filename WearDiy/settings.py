@@ -121,6 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 
 
 AUTH_USER_MODEL = 'accounts.MyUser'
@@ -136,3 +140,13 @@ LOGIN_URL = "/accounts/login"
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY=os.environ['MAILGUN_PRIVATE_KEY']
+MAILGUN_SERVER_NAME="sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org"
+
+DEFAULT_FROM_EMAIL = 'postmaster@sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org'
+FROM_EMAIL = "postmaster@sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
