@@ -1,6 +1,6 @@
 from django.urls import path, include
-from .views import catelog
+from .views import catalog
 
 urlpatterns = [
-    path('catelog/', catelog, name ="catelog")
+    path('catalog/', catalog, name ="catalog")
 ]
