@@ -62,13 +62,12 @@ def pay(request):
     
         transaction_id = request.POST['transaction_id']
         transaction = Transaction.objects.get(pk=transaction_id)
-        if transaction.status == 'pending':
-        	return HttpResponse("session has expired")
+        # if transaction.status == 'pending':
+        # 	return HttpResponse("session has expired")
 
         
         stripeToken = request.POST['stripe_id']
         
-        # set the secret key for the Stripe API
         stripe.api_key = settings.STRIPE_SECRET_KEY
         
         order_form = OrderForm(request.POST)
@@ -77,7 +76,7 @@ def pay(request):
         if order_form.is_valid() and payment_form.is_valid():
             try:
                 customer = stripe.Charge.create(
-                    amount= int(request.POST['amount'])*100,
+                    amount= int(request.POST['amount']),
                     currency='sgd',
                     description='Payment',
                     card=stripeToken
@@ -92,11 +91,6 @@ def pay(request):
                     transaction.status = 'approved'
                     transaction.charge = order
                     transaction.save()
-                    
-                    line_items = LineItem.objects.filter(transaction_id=transaction.id)
-                    for each_line_item in line_items:
-                        each_line_item.product.quantity -= 1
-                        each_line_item.product.save()
                         
                     cart_items = CartItem.objects.filter(owner=request.user).delete()
                     
@@ -111,6 +105,7 @@ def pay(request):
             'order_form' : order_form,
             'payment_form' : payment_form,
             'amount' : amount,
+            'transaction': transaction,
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
         })
         
@@ -118,5 +113,6 @@ def pay(request):
             'order_form' : order_form,
             'payment_form' : payment_form,
             'amount' : amount,
+            'transaction': transaction,
             'publishable': settings.STRIPE_PUBLISHABLE_KEY
             })

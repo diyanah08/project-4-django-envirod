@@ -38,5 +38,5 @@ class LineItem(models.Model):
     cost = models.IntegerField(blank=False)
     transaction = models.ForeignKey('Transaction', on_delete=models.CASCADE)
 
-def __str__(self):
-	return self.product.name + " : " + self.sku
+    def __str__(self):
+    	return self.name + " : " + self.sku

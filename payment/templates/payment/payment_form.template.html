@@ -1,7 +1,6 @@
 {% extends 'base.template.html' %}
 
 {%block content%}
-    <h1>Please key in the amount to pay</h1>
     <form method='GET' action='{% url 'pay' %}'>
         {% csrf_token %}
         <label>Amount to Pay:</label>
