@@ -1,0 +1,21 @@
+{% extends 'base.template.html' %}
+
+{%block content %}
+
+<div style='display:flex;justify-content:space-between'>
+
+    {%for product in all_products %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{product.image.url}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text">${{product.getCostInDollars}}0</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Sign In to Shop</a>
+        </div>
+    </div>
+    {%endfor%}
+
+</div>
+
+{%endblock%}

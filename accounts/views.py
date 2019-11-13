@@ -5,13 +5,10 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def home(request):
-    return render(request, 'base.template.html')
-    
 def logout(request):
     auth.logout(request)
     messages.success(request, "Logout Successful")
-    return redirect(home)
+    return render(request, 'shop/home.template.html')
 
 def login(request):
     if request.method == "POST":
@@ -41,7 +38,7 @@ def register(request):
                 messages.success(request, "Welcome! Thank you for registering.")
             else:
                 messages.error(request, "Unable to register at the moment. Please try again later.")
-            return redirect(reverse('home'))
+            return render(request, 'shop/home.template.html')
         else:
             return render(request, "accounts/register.template.html",{
                 'form': form
