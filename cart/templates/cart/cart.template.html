@@ -2,9 +2,8 @@
 
 {% block content %}
 
-{%for cart_item in all_cart_items %}
 <a href="{% url 'payment_form' %}">Check Out</a>
-
+{%for cart_item in all_cart_items %}
 
 <div class="media">
   <img src="{{ cart_item.product.image.url }}" class="mr-3">
