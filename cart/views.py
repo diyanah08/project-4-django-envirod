@@ -28,6 +28,9 @@ def add_to_cart(request, product_id):
 def remove_from_cart(request, cart_item_id):
 
     existing_cart_item = CartItem.objects.get(pk=cart_item_id)
-    existing_cart_item.quantity -= 1
-    existing_cart_item.save()
+    if existing_cart_item.quantity == 1:
+        existing_cart_item.delete()
+    else:
+        existing_cart_item.quantity -= 1
+        existing_cart_item.save()
     return redirect(reverse('view'))
