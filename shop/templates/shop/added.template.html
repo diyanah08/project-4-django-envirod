@@ -1,0 +1,54 @@
+{% extends 'base.template.html' %}
+
+{% load static %}
+
+{%block footer_js %}
+
+<script>
+$(document).ready(function(){
+    $("#myToast").toast({ autohide: false });
+    $("#myToast").toast('show');
+});
+</script>
+
+{%endblock%}
+
+{%block content %}
+
+<div class= "container">
+    
+<div style='display:flex;justify-content:space-between'>
+
+    {%for product in all_products %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{product.image.url}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text">${{product.getCostInDollars}}0</p>
+            <a href="{% url 'add_to_cart' product_id=product.id %}" class="btn btn-primary">Add to cart</a>
+        </div>
+    </div>
+    {%endfor%}
+
+</div>
+
+
+<div class="bs-example">
+    <div class="toast" id="myToast" style="position: absolute; top: 75px; right: 200px;">
+        <div class="toast-header">
+            <strong class="mr-auto"><i class="fa fa-grav"></i> We miss you!</strong>
+            <small>11 mins ago</small>
+            <a href="{% url "catalog" %}"><button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                <span aria-hidden="true">&times;</span>
+            </button></a>
+        </div>
+        <div class="toast-body">
+            <div>It's been a long time since you visited us. We've something special for you. <a href="#">Click here!</a></div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+
+</div>

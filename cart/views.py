@@ -23,7 +23,11 @@ def add_to_cart(request, product_id):
     else:
         existing_cart_item.quantity += 1
         existing_cart_item.save()
-    return redirect(reverse('catalog'))
+    
+    all_products = Product.objects.all()
+    return render(request, 'shop/added.template.html', {
+        'all_products': all_products
+    })
     
 def remove_from_cart(request, cart_item_id):
 
