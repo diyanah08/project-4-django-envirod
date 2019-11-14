@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -49,6 +49,26 @@ def register(request):
             'form': register_form
         })
 
+def editProfile(request):
+    User = get_user_model()
+    user = User.objects.get(email=request.user.email)
+    form = UserRegistrationForm(instance=user)
+
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST, request.FILES, instance=user)
+        
+        if form.is_valid():
+            update = form.save(commit=False)               
+            update.user = user
+            update.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, "Profile Updated")
+            return redirect(reverse('home'))                
+
+    else:
+        form = UserRegistrationForm(instance=user)
+        return render(request, 'accounts/edit_profile.template.html', {'form': form})
+        
 @login_required    
 def profile(request):
     User = get_user_model()
@@ -56,3 +76,4 @@ def profile(request):
     return render(request, 'accounts/profile.template.html', {
         'user' : user
     })
+

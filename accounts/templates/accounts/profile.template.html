@@ -9,5 +9,5 @@
 <p>Telephone: {{ user.telephone }}</p>
 <p>Username: {{ user }}</p>
 <p>Password: *****</p>
-<a href="" class="btn btn-primary">Edit Profile</a> <a href="{% url 'password_reset' %}" class="btn btn-primary">Reset Password</a>
+<a href="{% url 'editProfile' %}" class="btn btn-primary">Edit Profile</a> <a href="{% url 'password_reset' %}" class="btn btn-primary">Reset Password</a>
 {%endblock%}

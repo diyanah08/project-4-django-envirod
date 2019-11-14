@@ -40,4 +40,3 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['first_name', 'last_name', 'email', 'address', 'postal_code', 'telephone','username', 'password1', 'password2']
 
     
-
