@@ -50,24 +50,23 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url "logout" %}">Logout</a>
             </li>
+            <li class="nav-link">
+              <div class= "ml-auto user-display">
+                {% if request.user.username %}
+                  Hello {{request.user.first_name}}!
+                {% endif %}
+              </div>
+            </li>
             {%endif%}
           </ul>
         </div>
       </nav>
-      <div class="d-flex">
-        <div class= "ml-auto user-display">
-          {% if request.user.username %}
-            Hello {{request.user.first_name}}!
-          {% endif %}
-        </div>
-      </div>
       
       {% if messages %}
       <div class='alert alert-success'>
       {% for m in messages %} {{ m }} {% endfor %}
        </div>
       {% endif %}
-
 
       {%block content%}
       {%endblock%}

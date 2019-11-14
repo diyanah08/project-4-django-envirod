@@ -57,3 +57,13 @@ body{
     margin-top: 20px;
     background-color: beige !important;
 }
+
+.user-display {
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: bolder;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-align: right;
+    color: black;
+}
