@@ -5,11 +5,18 @@ body{
     margin: 0px;
     padding: 0px;
     background-image: url(/static/images/bg.jpg);
+    font-family: 'Acme', sans-serif;
 }
 
 .container {
     padding: 0px;
     background-color: rgba(244, 249, 233, 0.65);
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+    font-size: 40px;
+    font-weight: bolder;
 }
 
 /*navbar styles*/
@@ -18,8 +25,10 @@ body{
 }
 
 .navbar-brand {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 30px;
+    font-family: 'Bungee Inline', cursive;
+    font-weight: bolder;
+    font-size: 35px;
+    padding-left: 10px;
     color: teal !important;
 }
 
@@ -39,8 +48,8 @@ body{
 }
 
 .nav-link {
-    font-family: 'Questrial', sans-serif;
-    font-size: 16px;
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
     font-weight: bolder;
     letter-spacing: 2px;
     color: teal !important;
@@ -56,6 +65,8 @@ body{
     bottom: 0;
     padding: 20px;
     background-color: rgba(244, 249, 233, 0.10) !important;
+    font-family: 'Special Elite', cursive;
+    font-weight: bolder;
 }
 
 .user-display {
@@ -70,6 +81,7 @@ body{
 
 form {
     padding: 30px;
+    font-family: 'Special Elite', cursive;
 }
 
 .bd-example {
