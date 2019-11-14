@@ -1,6 +1,7 @@
 {% extends 'base.template.html' %}
 
 {%block content%}
+<div class = "main">
 <h1>{{ user.first_name }}'s Profile</h1>
 <p>Name : {{ user.first_name }} {{ user.last_name }}</p>
 <p>Email: {{ user.email }}</p>
@@ -9,4 +10,5 @@
 <p>Username: {{ user }}</p>
 <p>Password: *****</p>
 <a href="{% url 'editProfile' %}" class="btn btn-primary">Edit Profile</a> <a href="{% url 'password_reset' %}" class="btn btn-primary">Reset Password</a>
+</div>
 {%endblock%}

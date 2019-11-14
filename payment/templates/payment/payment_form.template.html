@@ -1,10 +1,12 @@
 {% extends 'base.template.html' %}
 
 {%block content%}
+<div class = "main">
     <form method='GET' action='{% url 'pay' %}'>
         {% csrf_token %}
         <label>Amount to Pay:</label>
         <p>${{total_cost}}0</p>
         <input type='submit' value='Proceed to Payment'/>
     </form>
+</div>
 {%endblock%}

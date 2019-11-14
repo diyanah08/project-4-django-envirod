@@ -13,8 +13,7 @@ body{
 
 /*navbar styles*/
 .navbar {
-    margin: 0px;
-    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .navbar-brand {
@@ -66,4 +65,17 @@ body{
     letter-spacing: 1px;
     text-align: right;
     color: black;
+}
+
+form {
+    padding: 30px;
+}
+
+.bd-example {
+    padding: 0px 3px;
+    margin-bottom: 20px;
+}
+
+.main {
+    padding: 0px 20px;
 }

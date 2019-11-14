@@ -3,14 +3,15 @@
 {% load crispy_forms_tags %}
 
 {%block content%}
+<div class = "main">
 <h1>Log In</h1>
 <form method="POST">
   {% csrf_token %}
   {{ form | crispy }}
-  <input type='submit' value='Log In'/>
+  <input type='submit' value='Log In'/><a href="{% url "password_reset" %}"> Forgot Password</a>
 </form>
-<a href="{% url "password_reset" %}">Forgot Password</a>
-
 <h1>New to Name?</h1>
 <a href="{% url "register" %}">Register for an Account</a>
+
+</div>
 {%endblock%}
