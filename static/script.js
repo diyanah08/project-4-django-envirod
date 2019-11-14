@@ -1,5 +1,5 @@
-// <script>
-// $("#addToCart").onclick(function(){
-//     $("#myToast").toast('show')
-// });
-// </script>
+
+$(document).ready(function(){
+    $("#myToast").toast({ autohide: false });
+    $("#myToast").toast('show');
+});

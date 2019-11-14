@@ -4,12 +4,7 @@
 
 {%block footer_js %}
 
-<script>
-$(document).ready(function(){
-    $("#myToast").toast({ autohide: false });
-    $("#myToast").toast('show');
-});
-</script>
+<script src="{% static 'script.js' %}"></script>
 
 {%endblock%}
 
