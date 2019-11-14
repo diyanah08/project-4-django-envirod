@@ -6,5 +6,6 @@ urlpatterns = [
     path('logout/', logout, name ="logout"),
     path('register/', register, name ="register"),
     path('profile/', profile, name ="profile"),
-    path('edit/', editProfile, name ="editProfile")
+    path('edit/', editProfile, name ="editProfile"),
+    path('', include('django.contrib.auth.urls')),
 ]

@@ -142,12 +142,12 @@ LOGIN_URL = "/accounts/login"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY=os.environ['MAILGUN_PRIVATE_KEY']
-MAILGUN_SERVER_NAME="msp-msp.live"
+EMAIL_BACKEND = "django_mailgun.MailgunBackend"
+MAILGUN_ACCESS_KEY=os.environ["MAILGUN_PRIVATE_KEY"]
+MAILGUN_SERVER_NAME="sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org"
 
-DEFAULT_FROM_EMAIL = 'admin@msp.msp.live'
-FROM_EMAIL = "admin@msp.msp.live"
+DEFAULT_FROM_EMAIL = "admin@sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org"
+FROM_EMAIL = "admin@sandbox00406c4a9e8f479b9b444736e7836f60.mailgun.org"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
