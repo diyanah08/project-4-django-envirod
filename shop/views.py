@@ -16,3 +16,4 @@ def catalog(request):
     return render(request, 'shop/catelog.template.html', {
         'all_products': all_products
     })
+    
