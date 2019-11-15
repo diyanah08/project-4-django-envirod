@@ -4,7 +4,9 @@ body{
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    background-image: url(/static/images/bg.jpg);
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-position: left center;
     font-family: 'Acme', sans-serif;
 }
 
