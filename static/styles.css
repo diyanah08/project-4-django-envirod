@@ -99,11 +99,16 @@ form {
 }
 
 #map {
-    position: absolute;
-    width: 50%;
+    width: 70%;
     height: 70%;
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2;
-    margin: 10px 150px;
+    margin: 10px 160px;
+}
+
+#address {
+    position: static;
+    text-align: center;
+    margin-top: 30px;
 }
