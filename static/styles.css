@@ -71,7 +71,7 @@ h1 {
 
 .user-display {
     padding-left: 15px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bolder;
     font-style: italic;
     letter-spacing: 1px;
@@ -91,4 +91,19 @@ form {
 
 .main {
     padding: 0px 20px;
+}
+
+.map-page {
+    height: 100vh;
+    padding: 0px 20px;
+}
+
+#map {
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    margin: 10px 150px;
 }

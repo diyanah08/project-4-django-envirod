@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'shop',
     'cart',
-    'payment'
+    'payment',
+    'location'
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+
+MAPBOX_ACCESS_TOKEN = os.getenv('MAPBOX_ACCESS_TOKEN')
