@@ -1,0 +1,20 @@
+{% extends 'base.template.html' %}
+
+{%block content%}
+<a href = "{% url "personalise_product" %}"><h5>Personalise a Product</h5></a>
+<h1>Personalise Product</h1>
+    {% for i in items%}
+    <div class="card" style="width: 18rem;">
+        <img src="{{i.category.image.url}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Product: {{i.category}}</h5>
+            <p class="card-text">Personalisation: {{i.personalise}}</p>
+            <p class="card-text">Quantity: {{i.quantity}}</p>
+            <p class="card-text">Cost: ${{i.getTotalCost}}0</p>
+        </div>
+    </div>
+    {%endfor%}
+    
+    
+
+{%endblock%}

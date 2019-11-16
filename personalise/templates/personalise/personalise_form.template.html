@@ -1,0 +1,13 @@
+{% extends 'base.template.html' %}
+
+{% load crispy_forms_tags %}
+
+{%block content%}
+<h1>Personalise a Product</h1>
+{{form.media}}
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{form | crispy}}
+    <input type ="submit" value="Personalise" class="btn btn-primary">
+</form>
+{%endblock%}

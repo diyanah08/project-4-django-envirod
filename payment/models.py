@@ -7,7 +7,7 @@ class Charge(models.Model):
     country = models.CharField(max_length=40, blank=False)
     postcode = models.CharField(max_length=20, blank=True)
     town_or_city = models.CharField(max_length=40, blank=False)
-    address = models.CharField(max_length=255, blank=False)
+    street_address1 = models.CharField(max_length=255, blank=False)
     date = models.DateField()
 
     def __str__(self):
