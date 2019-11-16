@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class = "main">
-<a href="{% url 'payment_form' %}">Check Out</a>
+<a href="{% url 'payment_form' %}" class="btn btn-primary">Check Out</a>
 {%for cart_item in all_cart_items %}
 
 <div class="media">
@@ -16,7 +16,7 @@
     <p>
         Cost: ${{cart_item.product.getCostInDollars}} <br/>
         Quantity: {{cart_item.quantity }}
-        <a href="{% url 'remove_from_cart' cart_item_id=cart_item.id %}">Remove</a>
+        <a href="{% url 'remove_from_cart' cart_item_id=cart_item.id %}" class="btn btn-primary">Remove</a>
     </p>
   </div>
 </div>
